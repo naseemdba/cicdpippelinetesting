@@ -80,10 +80,10 @@ jobs:
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
-          server_port: 587
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          from: "naseemdba@gmail.com"
+          server_port: 465
+          username: ${{ secrets.SMTP_USER }}
+          password: ${{ secrets.SMTP_PASS }}
+          from: ${{ secrets.SMTP_USER }}
           to: ${{ secrets.NOTIFY_EMAIL }}
           subject: "Pipeline Testing Success"
           body: |
@@ -102,9 +102,9 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 587
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          from: "naseemdba@gmail.com"
+          username: ${{ secrets.SMTP_USER }}
+          password: ${{ secrets.SMTP_PASS }}
+          from: ${{ secrets.SMTP_USER }}
           to: ${{ secrets.NOTIFY_EMAIL }}
           subject: "Pipeline Failed"
           body: |
